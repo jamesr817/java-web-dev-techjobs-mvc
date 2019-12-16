@@ -11,28 +11,36 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
-    <table class="job-listing">
-        <th:block th:each="jobs:${jobs}">
-            <th>ID</th>
-            <th>Name</th>
-            <th>Employer</th>
-            <th>Location</th>
-            <th>Position Type</th>
-            <th>Skill</th>
+    <table class="job-listing" th:block th:each="jobs:${jobs}">
             <tr>
-                <td th:text="${jobs.getId()}">ID: </td>
-                <td th:text="${jobs.getName()}">Name: </td>
-                <td th:text="${jobs.getEmployer()}">Employer:</td>
-                <td th:text="${jobs.getLocation()}">Location: </td>
-                <td th:text="${jobs.getPositionType()}">Position Type: </td>
-                <td th:text="${jobs.getCoreCompetency()}">Skill: </td>
-<!--                <td th:text="${jobs.tableChoices}"></td>-->
-<!--                <td th:text="${jobs.employers}"></td>-->
-<!--                <td th:text="${jobs.locations}"></td>-->
-<!--                <td th:text="${jobs.positions}"></td>-->
-<!--                <td th:text="${jobs.skills}"></td>-->
+                 <th>ID: </th>
+                 <td th:text="${jobs.getId()}">ID: </td>
             </tr>
-        </th:block>
+
+             <tr>
+                 <th>Name: </th>
+                 <td th:text="${jobs.getName()}">Name: </td>
+             </tr>
+
+             <tr>
+                 <th>Employer: </th>
+                 <td th:text="${jobs.getEmployer()}">Employer:</td>
+             </tr>
+
+             <tr>
+                 <th>Location: </th>
+                 <td th:text="${jobs.getLocation()}">Location: </td>
+             </tr>
+
+             <tr>
+                 <th>Position Type: </th>
+                 <td th:text="${jobs.getPositionType()}">Position Type: </td>
+             </tr>
+
+             <tr>
+                 <th>Skill: </th>
+                 <td th:text="${jobs.getCoreCompetency()}">Skill: </td>
+             </tr>
     </table>
 </div>
 
